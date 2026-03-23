@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -e
+trap "echo 'Exiting...'; exit" INT
+
 # --- 0. Email Input Handling ---
 USER_EMAIL=$1
 
