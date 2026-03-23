@@ -108,6 +108,7 @@ ssh-add ~/.ssh/id_ed25519
 
 # --- 9. Setup docker
 bash <(curl -fsSL https://get.docker.com)
+sudo usermod -aG docker $USER
 
 echo "--------------------------------------------------"
 echo "Setup complete! Please restart your terminal."
