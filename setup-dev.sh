@@ -106,6 +106,9 @@ ssh-keygen -t ed25519 -C "$USER_EMAIL"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 
+# --- 9. Setup docker
+bash <(curl -fsSL https://get.docker.com)
+
 echo "--------------------------------------------------"
 echo "Setup complete! Please restart your terminal."
 echo "--------------------------------------------------"
