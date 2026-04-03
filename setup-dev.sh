@@ -141,6 +141,8 @@ if ! command -v docker &> /dev/null; then
     echo "Installing Docker..."
     bash <(curl -fsSL https://get.docker.com)
     sudo usermod -aG docker $USER
+    sudo systemctl start docker
+    sudo systemctl enable docker
 else
     echo "Docker already installed. Skipping."
 fi
