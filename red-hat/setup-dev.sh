@@ -28,6 +28,9 @@ sudo dnf groupinstall -y "Development Tools" || true
 sudo dnf install -y \
     git curl wget unzip zip vim \
     net-tools iputils bind-utils \
+    gnome-tweaks \
+    gnome-extensions-app \
+    gnome-browser-connector \
     ca-certificates gnupg2 bash || true
 
 # --- 3. Java & Android SDK Setup ---
