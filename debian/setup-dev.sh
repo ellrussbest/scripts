@@ -23,6 +23,9 @@ fi
 echo "Updating system and installing basic utils..."
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y build-essential git curl wget unzip zip vim \
+    gnome-tweaks \
+    gnome-extensions-app \
+    gnome-browser-connector \
     net-tools iputils-ping dnsutils ca-certificates gnupg bash || true
 
 # --- 3. Java & Android SDK Setup ---
