@@ -162,6 +162,38 @@ else
     echo "Docker already installed. Skipping."
 fi
 
+# --- 10. Install postman ---
+if ! command -v postman &> /dev/null; then
+    echo "Installing Postman..."
+    wget -q --show-progress https://dl.pstmn.io/download/latest/linux64 -O /tmp/postman-linux-x64.tar.gz
+    sudo rm -rf /opt/Postman
+    sudo tar -xzf /tmp/postman-linux-x64.tar.gz -C /opt
+    sudo chown -R $USER:$USER /opt/Postman
+    sudo chmod +x /opt/Postman/Postman
+    sudo ln -sf /opt/Postman/Postman /usr/bin/postman
+    mkdir -p ~/.local/share/applications
+    cat << EOF > ~/.local/share/applications/postman.desktop
+[Desktop Entry]
+Name=Postman
+GenericName=API Client
+X-GNOME-FullName=Postman API Client
+Comment=Make and view REST API calls and responses
+Keywords=api;
+Exec=/opt/Postman/Postman
+Terminal=false
+Type=Application
+Icon=/opt/Postman/app/resources/app/assets/icon.png
+Categories=Development;Utilities;
+EOF
+
+    # Clean up the downloaded archive
+    rm /tmp/postman-linux-x64.tar.gz
+    
+    echo "Postman installation complete."
+else
+    echo "Postman already installed. Skipping."
+fi
+
 echo "--------------------------------------------------"
 echo "Setup complete! Please restart your terminal."
 echo "--------------------------------------------------"
