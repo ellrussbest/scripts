@@ -114,8 +114,8 @@ cat << 'EOF' >> ~/.bashrc
 export ANDROID_SDK_ROOT="/usr/local/android"
 export PATH="$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools"
 
-alias gs='git status',
-alias gp='git pull'
+alias virc='vim ~/.bashrc'
+alias pnpm-init='pnpm init && pnpm add -D typescript @types/node && pnpm tsc --init'
 alias la='ls -A'
 alias ll='ls -alF'
 # END CUSTOM SETUP
